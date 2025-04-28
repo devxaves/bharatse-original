@@ -11,7 +11,7 @@ const navItems = [
   { name: "Features", href: "#features" },
   { name: "Workflow", href: "#workflow" },
   // { name: "Testimonials", href: "#testimonials" },
-  { name: "Pricing", href: "#pricing" },
+  // { name: "Pricing", href: "#pricing" },
 ]
 
 export default function Navbar() {
@@ -57,7 +57,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300  ${
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"
+          isScrolled ? "bg-white/90 backdrop-blur-md shadow-md py-3" : "bg-white/90 backdrop-blur-md shadow-md py-3"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 flex items-center justify-evenly">

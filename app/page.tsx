@@ -22,15 +22,15 @@ export default function Home() {
       <div id="features">
         <FeaturesSection />
       </div>
-      <div id="workflow">
+      {/* <div id="workflow">
         <WorkflowSection />
-      </div>
+      </div> */}
       {/* <div id="testimonials">
         <TestimonialsSection />
       </div> */}
-      <div id="pricing">
+      {/* <div id="pricing">
         <PricingSection />
-      </div>
+      </div> */}
       {/* <StatsSection /> */}
       <Footer />
     </main>

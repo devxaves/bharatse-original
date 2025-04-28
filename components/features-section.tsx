@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Search, Shield, Zap, Users, Award, CreditCard } from "lucide-react";
+import { Search, Shield, Zap, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
@@ -42,24 +42,6 @@ const features = [
     hoverColor: "group-hover:bg-green-600 group-hover:text-white",
     shadowColor: "group-hover:shadow-green-200",
   },
-  {
-    icon: Award,
-    title: "Quality Guarantee",
-    description:
-      "We ensure high-quality service with our satisfaction guarantee.",
-    color: "bg-yellow-100 text-yellow-600",
-    hoverColor: "group-hover:bg-yellow-600 group-hover:text-white",
-    shadowColor: "group-hover:shadow-yellow-200",
-  },
-  {
-    icon: CreditCard,
-    title: "Secure Payments",
-    description:
-      "Pay securely through our platform with multiple payment options.",
-    color: "bg-red-100 text-red-600",
-    hoverColor: "group-hover:bg-red-600 group-hover:text-white",
-    shadowColor: "group-hover:shadow-red-200",
-  },
 ];
 
 export default function FeaturesSection() {
@@ -96,47 +78,62 @@ export default function FeaturesSection() {
             Why Choose BharatSe
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Revolutionizing{" "}
-            <span className="text-orange-600">Local Services</span>
+            Revolutionizing <span className="text-orange-600">Local Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Connect with skilled professionals for all your personal, creative,
-            and business needs.
+            Connect with skilled professionals for all your personal, creative, and business needs.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              whileHover={{
-                y: -10,
-                transition: { duration: 0.2 },
-              }}
-              className="group"
-            >
-              <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 group-hover:shadow-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-transparent group-hover:from-orange-50/30 group-hover:to-blue-50/30 transition-all duration-500"></div>
-                <CardContent className="p-6 relative z-10">
-                  <div
-                    className={`w-12 h-12 rounded-full ${feature.color} ${feature.hoverColor} flex items-center justify-center mb-4 transition-all duration-300`}
-                  >
-                    <feature.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+          {/* Image Section */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex justify-center"
+          >
+            <img
+              src="./banner.jpeg" // replace with your image path
+              alt="Local services"
+              className="w-full max-w-md rounded-2xl shadow-lg"
+            />
+          </motion.div>
 
-                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-500 to-orange-300 group-hover:w-full transition-all duration-500"></div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+          {/* Info Boxes Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.2 },
+                }}
+                className="group"
+              >
+                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 group-hover:shadow-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-transparent group-hover:from-orange-50/30 group-hover:to-blue-50/30 transition-all duration-500"></div>
+                  <CardContent className="p-6 relative z-10">
+                    <div
+                      className={`w-12 h-12 rounded-full ${feature.color} ${feature.hoverColor} flex items-center justify-center mb-4 transition-all duration-300`}
+                    >
+                      <feature.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
