@@ -9,7 +9,7 @@ import WaitlistForm from "./waitlist-form"
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "Features", href: "#features" },
-  { name: "Workflow", href: "#workflow" },
+  // { name: "Workflow", href: "#workflow" },
   // { name: "Testimonials", href: "#testimonials" },
   // { name: "Pricing", href: "#pricing" },
 ]

@@ -16,7 +16,7 @@ export default function Footer() {
               creative, and business needs.
             </p>
             <div className="flex gap-4">
-              <Link
+              {/* <Link
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
@@ -27,15 +27,15 @@ export default function Footer() {
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Twitter className="h-5 w-5" />
-              </Link>
+              </Link> */}
               <Link
-                href="#"
+                href="https://www.instagram.com/BharatSeCommunity"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/bharatsecommunity"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
@@ -54,7 +54,7 @@ export default function Footer() {
                   Home
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -77,7 +77,7 @@ export default function Footer() {
                 >
                   Pricing
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="#"
@@ -93,7 +93,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
               <li>Kolkata, India</li>
-              <li>BharatSeglobal@gmail.com</li>
+              <li>bharatseglobal@gmail.com</li>
               <li>+91 95475 71220</li>
             </ul>
             <div className="mt-4">
@@ -107,11 +107,11 @@ export default function Footer() {
             </div>
             <div className="mt-1">
               <Link
-                href="https://BharatSe.vercel.app"
+                href="https://bharatse.vercel.app"
                 target="_blank"
                 className="text-orange-400 hover:text-orange-300 transition-colors"
               >
-                BharatSe.vercel.app
+                bharatse.vercel.app
               </Link>
             </div>
           </div>
