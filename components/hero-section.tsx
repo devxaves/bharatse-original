@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ScrollText, ShoppingCart } from "lucide-react"; // Updated icons
 import { Button } from "@/components/ui/button";
 import WaitlistForm from "./waitlist-form";
 
@@ -99,11 +99,25 @@ export default function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-orange-400 text-orange-600 hover:bg-orange-100 rounded-full px-8"
+              className="border-orange-400 text-orange-600 hover:bg-white rounded-full px-8"
               onClick={openWaitlist}
             >
-              Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+              Join the Waitlist <ScrollText className="ml-2 h-4 w-4" />
             </Button>
+
+            <a
+              href="https://bharatsestore.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white bg-orange-600 text-white hover:bg-orange-500 rounded-full px-8"
+              >
+                BharatSe Store <ShoppingCart className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
       </div>

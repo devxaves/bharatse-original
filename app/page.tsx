@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
 import FeaturesSection from "@/components/features-section"
+import FeaturesSection2 from "@/components/features-section2"
 import WorkflowSection from "@/components/workflow-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import PricingSection from "@/components/pricing-section"
@@ -21,6 +22,9 @@ export default function Home() {
       </div>
       <div id="features">
         <FeaturesSection />
+      </div>
+      <div id="features2">
+        <FeaturesSection2 />
       </div>
       {/* <div id="workflow">
         <WorkflowSection />

@@ -1,0 +1,139 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ShoppingBag, Star, PackageCheck, Truck } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
+const features = [
+  {
+    icon: ShoppingBag,
+    title: "Ethnic & Heritage Products",
+    description:
+      "Shop authentic Local handicrafts, textiles, and regional specialties",
+    color: "bg-pink-100 text-pink-600",
+    hoverColor: "group-hover:bg-pink-600 group-hover:text-white",
+    shadowColor: "group-hover:shadow-pink-200",
+  },
+  {
+    icon: Star,
+    title: "Curated by Experts",
+    description:
+      "Every product is handpicked and quality-checked by cultural experts",
+    color: "bg-yellow-100 text-yellow-600",
+    hoverColor: "group-hover:bg-yellow-600 group-hover:text-white",
+    shadowColor: "group-hover:shadow-yellow-200",
+  },
+  {
+    icon: PackageCheck,
+    title: "NFT Based Shopping",
+    description:
+      "Shop with confidence using our NFT-based authenticity verification system",
+    color: "bg-blue-100 text-blue-600",
+    hoverColor: "group-hover:bg-blue-600 group-hover:text-white",
+    shadowColor: "group-hover:shadow-blue-200",
+  },
+  {
+    icon: Truck,
+    title: "Seamless Delivery",
+    description:
+      "All items are securely packaged with BharatSe’s tamper-proof seals",
+    color: "bg-green-100 text-green-600",
+    hoverColor: "group-hover:bg-green-600 group-hover:text-white",
+    shadowColor: "group-hover:shadow-green-200",
+  },
+];
+
+export default function BharatSeStoreSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+
+  return (
+    <section ref={ref} className="relative py-24 overflow-hidden">
+      {/* Background blur elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div style={{ y }} className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-[10%] left-[10%] w-64 h-64 rounded-full bg-orange-200 mix-blend-multiply blur-3xl opacity-20"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-64 h-64 rounded-full bg-yellow-200 mix-blend-multiply blur-3xl opacity-20"></div>
+        </motion.div>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium rounded-full bg-orange-100 text-orange-700">
+            Why BharatSe Store
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+            <span className="text-orange-600">Local Products</span> from Local Sellers
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore Local authentic products curated for the heritage lovers.
+          </p>
+        </motion.div>
+
+        {/* Grid with reversed layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+          {/* Feature Info Cards (Now on Left) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 order-2 lg:order-1">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.2 },
+                }}
+                className="group"
+              >
+                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 group-hover:shadow-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-transparent group-hover:from-pink-50/30 group-hover:to-yellow-50/30 transition-all duration-500"></div>
+                  <CardContent className="p-6 relative z-10">
+                    <div
+                      className={`w-12 h-12 rounded-full ${feature.color} ${feature.hoverColor} flex items-center justify-center mb-4 transition-all duration-300`}
+                    >
+                      <feature.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Image (Now on Right for desktop) */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex justify-center order-1 lg:order-2"
+          >
+            <img
+              src="./Kulture.png" // replace with your new image
+              alt="BharatSe Store Products"
+              className="w-full max-w-md rounded-2xl shadow-lg"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
