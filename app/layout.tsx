@@ -37,14 +37,6 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "BharatSe – Trusted Local Experts Near You",
-  //   description:
-  //     "Discover and book skilled freelancers and service providers in your area. Powered by BharatSe.",
-  //   images: ["https://bharatse.vercel.app/banner1.jpeg"],
-  //   creator: "@bharatseapp",
-  // },
   robots: {
     index: true,
     follow: true,
@@ -58,9 +50,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico", // public/favicon.ico
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico", // You can add apple-touch-icon.png if needed
+    apple: "/favicon.ico",
   },
   generator: "BharatSe Platform – Developed in Next.js",
   applicationName: "BharatSe",
@@ -78,7 +70,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        {/* ✅ Google Search Console verification */}
+        <meta
+          name="google-site-verification"
+          content="kJE6DDz3TzeUvyh_3hpBkmUsrnPiFCq4p9a-J4uMyZE"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
