@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BharatSe – Find Trusted Local Experts for Every Need",
+  title: "BharatSe - Go HyperLocal",
   description:
     "BharatSe connects you with verified local service professionals and freelancers for all your personal, business, and creative needs. Available in Kolkata, expanding soon!",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://bharatse.vercel.app"),
   openGraph: {
-    title: "BharatSe – Your Hyperlocal Services Hub",
+    title: "BharatSe - Go HyperLocal",
     description:
       "Hire trusted freelancers and local service providers with BharatSe. Empowering communities and connecting skills with opportunities.",
     url: "https://bharatse.vercel.app",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "https://bharatse.vercel.app/banner1.jpeg", // public/banner1.jpeg
         width: 1200,
         height: 630,
-        alt: "BharatSe - Connect with Local Experts",
+        alt: "BharatSe - Go HyperLocal",
         type: "image/jpeg",
       },
     ],
