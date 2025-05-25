@@ -110,13 +110,13 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button
+{/*               <Button
                 size="lg"
                 variant="outline"
                 className="border-white bg-orange-600 text-white hover:bg-orange-500 rounded-full px-8"
               >
                 BharatSe Store <ShoppingCart className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
             </a>
           </motion.div>
         </motion.div>
