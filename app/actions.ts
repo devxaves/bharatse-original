@@ -8,7 +8,7 @@ interface WaitlistFormData {
   email: string
   role: string
 }
-
+ 
 export async function submitWaitlistForm(formData: WaitlistFormData) {
   try {
     // MongoDB connection string (should be in environment variables in production)
@@ -16,7 +16,7 @@ export async function submitWaitlistForm(formData: WaitlistFormData) {
     const client = new MongoClient(uri)
 
     await client.connect()
-    const database = client.db("BharatSe")
+    const database = client.db("bharatse")
     const collection = database.collection("waitlist")
 
     // Add timestamp to the form data
